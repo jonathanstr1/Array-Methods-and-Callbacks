@@ -59,8 +59,8 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(arr, getFinalsCB) {
-    let years = getFinals.filter(
-        item => arr
+    let years = getFinals(arr).filter(
+        item => item["Year"]
     )
 }
 
