@@ -60,10 +60,15 @@ Use the higher-order function called getYears to do the following:
 
 function getYears(arr, getFinalsCB) {
     let years = getFinals(arr).filter(
-        item => item["Year"]
+        function (item) {
+            console.log(item.Year + "test in filter");
+            return item.Year;
+        }
     )
+    console.log(`${years}test1`);
+    return years;
 }
-
+getYears(fifaData, getFinals);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
