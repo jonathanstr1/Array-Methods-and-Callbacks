@@ -59,14 +59,12 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(arr, getFinalsCB) {
-    let years = getFinals(arr).filter(
-        function (item) {
-            console.log(item.Year + "test in filter");
-            return item.Year;
-        }
-    )
-    console.log(`${years}test1`);
-    return years;
+    let nArr = getFinalsCB(arr);
+    let outArr = [];
+    for(let i = 0; i < nArr.length; i++){
+        outArr.push(nArr[i].Year);
+    }
+    return outArr;
 }
 getYears(fifaData, getFinals);
 
@@ -78,8 +76,8 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+function getWinners(arr, getFinalsCB) {
+    const winners = getFinalsCB(arr).forEach();
 }
 
 
